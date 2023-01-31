@@ -29,9 +29,9 @@ def main () :
         pygame.quit()
 
 ############################################################################
-
-# De categorieën met hun eigenschappen. Zie verslag volgende twee stukjes
-# voor meer duidelijkheid.
+"""
+De categorieën met hun eigenschappen. Zie verslag volgende twee stukjes voor meer duidelijkheid.
+"""
 
 kleur = ['rood', 'groen', 'paars']
 vorm = ['ruit', 'golf', 'ovaal']
@@ -39,12 +39,13 @@ getal = [1, 2, 3]
 vulling = ['solide','gestreept', 'open']
 
 ############################################################################
-
-# Functie om te onderzoeken of 3 kaarten wel of geen set vormen.
-# Hiervoor gaan we eerst de 4 verschillende categorieën vastellen.
-# De 4 categorieën zijn: kleur, vorm, getal en vulling.
-# Zie verslag voor wanneer 3 kaarten wel of geen set vormen en hoe een kaart
-# er specifiek uitziet.
+"""
+ Functie om te onderzoeken of 3 kaarten wel of geen set vormen.
+ Hiervoor gaan we eerst de 4 verschillende categorieën vastellen.
+ De 4 categorieën zijn: kleur, vorm, getal en vulling.
+ Drie kaarten vormen een set als ze per eigenschap óf allemaal verschillend óf allemaal anders zijn.
+ In de map 'afbeeldingen' staan de kaarten in gif formaat.
+"""
 
 def controleer_set(kaart1, kaart2, kaart3):
 	kleur_controle = hetzelfde_of_verschillend (kaart1.kleur, kaart2.kleur, kaart3.kleur)
@@ -54,14 +55,15 @@ def controleer_set(kaart1, kaart2, kaart3):
 	return kleur_controle and vorm_controle and getal_controle and vulling_controle
 
 ############################################################################
-
-# We gaan hier nu de eigenschappen van de categorieën met elkaar vergelijken.
-# Met eigenschappen bedoelen we wat de categorieën kunnen aannemen, dus
-# bijvoorbeeld rood of groen, of ruit of golf.
-# Return True als het wel een set is.
-# Return False als het geen set is.
-# Zie verslag voor wanneer 3 kaarten wel of geen set vormen en hoe een kaart
-# er specifiek uitziet.
+"""
+We gaan hier nu de eigenschappen van de categorieën met elkaar vergelijken.
+Met eigenschappen bedoelen we wat de categorieën kunnen aannemen, dus
+bijvoorbeeld rood of groen, of ruit of golf.
+Return True als het wel een set is.
+Return False als het geen set is.
+Zie verslag voor wanneer 3 kaarten wel of geen set vormen en hoe een kaart
+er specifiek uitziet.
+"""
 
 def hetzelfde_of_verschillend(eigenschap1, eigenschap2, eigenschap3):
 	if eigenschap1 == eigenschap2 and eigenschap2 == eigenschap3:
@@ -72,8 +74,9 @@ def hetzelfde_of_verschillend(eigenschap1, eigenschap2, eigenschap3):
 		return False
 
 ############################################################################
-
-# Een klasse voor de kaarten maken
+"""
+Een klasse voor de kaarten maken
+"""
 
 class kaart:
 	def __init__ (self, kleur, vorm, getal, vulling):
@@ -89,9 +92,9 @@ class kaart:
 				self.vulling == other.vulling
 
 ############################################################################
-
-# De tijd voor het spel tonen en af te laten lopen.
-
+"""
+De tijd voor het spel tonen en af te laten lopen.
+"""
 class speeltijd:
 	def __init__ (self, tijd):
 		self.tijd = tijd #in seconden
@@ -99,18 +102,20 @@ class speeltijd:
 		self.image = pygame.image.load ("img/1.png")
 
 ############################################################################
-
-# De tijd voor het spel bepalen.
+"""
+De tijd voor het spel bepalen.
+"""
 
 def spelduur(seconden):
 	return "Tijd:" + str(seconden) + "seconden"
 
 ############################################################################
+"""
+Klassen voor de knoppen in het spel en de moeilijkheidsgraad.
 
-# Klassen voor de knoppen in het spel.
-
-# Knop voor wanneer er geen sets zichtbaar zijn en er 3 kaarten
-# verwisseld moeten worden.
+Een knop voor als er geen sets zichtbaar zijn (en we dus een cap set hebben) en er 3 kaarten
+verwisseld moeten worden.
+"""
 
 class Drie_nieuwe_kaarten:
 	def __init__(self, knop):
@@ -120,8 +125,9 @@ class Drie_nieuwe_kaarten:
 		self.kaarten = nieuwe_kaarten
 
 
-# Een nieuw spel starten.
-
+"""
+Een knop om een nieuw spel starten.
+"""
 class opnieuw_spelen:
 	def __init__(self, knop):
 		self.image = pygame.image.load ("img/3.png")
@@ -130,7 +136,9 @@ class opnieuw_spelen:
 		self.moeilijkheidkiezen = moeilijkheid
 
 
-# Veel tijd
+"""
+Veel tijd
+"""
 class makkelijk:
 	def __init__(self, knop):
 		self.image = pygame.image.load ("img/4.png")
@@ -138,7 +146,9 @@ class makkelijk:
 	def gedrukt(self, knop_gedrukt):
 		self.moeilijkheidkiezen = makkelijk
 
-# Weinig tijd
+"""
+Weinig tijd
+"""
 class moeilijk:
 	def __init__(self, knop):
 		self.image = pygame.image.load ("img/5.png")
@@ -147,9 +157,10 @@ class moeilijk:
 		self.moeilijkheidkiezen = moeilijk
 
 ############################################################################
-
-# Het spel daadwerkelijk implementeren nu...
-# Het spel is afgelopen als de tijd om is, of als alle sets gevonden, of als er
-# geen sets meer mogelijk zijn.
+"""
+Het spel daadwerkelijk implementeren nu...
+Het spel is afgelopen als de tijd om is, of als alle sets gevonden, of als er
+geen sets meer mogelijk zijn.
+"""
 
 # ...
