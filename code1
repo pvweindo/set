@@ -9,7 +9,7 @@ eind = aantal_kaarten // 2
 # De kaarten de eigenschappen van de categorieën toekennen.
 kaarten = list(product("rood groen paars".split(),
                     "1 2 3".split(),
-                    "ruit golf rondje".split(),
+                    "ruit golf ovaal".split(),
                     "solide gestreept open".split()))
 
 # De kaarten uitdelen en ook de sets vinden.
