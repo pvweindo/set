@@ -1,4 +1,4 @@
-Voor onze eindopdracht moesten we een code in Python, zodat het spel SET! gespeeld kan worden. In deze Github-omgeving staan twee codes. Verder staan er in deze omgeving deze “Read me” en de afbeeldingen die we wilden gebruiken voor de kaarten in Pygame.
+Voor onze eindopdracht moesten we een code in Python schrijven, zodat het spel SET! gespeeld kan worden. In deze Github-omgeving staan twee codes. Verder staan er in deze omgeving deze “Read me” en de afbeeldingen die we wilden gebruiken voor de kaarten in Pygame.
 
 Uitleg codes:
 Code 1 is een algemene code waarbij het spel SET! nagebootst kon worden. Wanneer code 1 gerund wordt, worden 12 “kaarten” weergegeven (de kaarten worden als tekst met de eigenschappen weergegeven), en worden de mogelijke SETS weergegeven.
