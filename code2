@@ -34,7 +34,7 @@ def main () :
 # voor meer duidelijkheid.
 
 kleur = ['rood', 'groen', 'paars']
-vorm = ['ruit', 'golf', 'rondje']
+vorm = ['ruit', 'golf', 'ovaal']
 getal = [1, 2, 3]
 vulling = ['solide','gestreept', 'open']
 
