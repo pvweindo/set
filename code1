@@ -1,0 +1,26 @@
+import random
+from itertools import product, combinations
+
+# Het aantal kaarten dat uitgedeeld moet worden definiëren.
+
+aantal_kaarten = 12
+eind = aantal_kaarten // 2
+
+# De kaarten de eigenschappen van de categorieën toekennen.
+kaarten = list(product("rood groen paars".split(),
+                    "1 2 3".split(),
+                    "ruit golf rondje".split(),
+                    "solide gestreept open".split()))
+
+# DE kaarten uitdelen en ook de sets vinden.
+sets = []
+while len(sets) != eind:
+    uitdelen = random.sample(kaarten, aantal_kaarten)
+    sets = [a for a in combinations(uitdelen, 3)
+            if all(len(set(x)) in [1, 3] for x in zip(*a))]
+
+# De kaarten als tekst tonen
+print("De %d uitgedeelde kaarten:" % len(uitdelen))
+print(uitdelen)
+print("\nBevat de volgende %d sets:" % len(sets))
+print(sets)
