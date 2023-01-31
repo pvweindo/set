@@ -12,7 +12,7 @@ kaarten = list(product("rood groen paars".split(),
                     "ruit golf rondje".split(),
                     "solide gestreept open".split()))
 
-# DE kaarten uitdelen en ook de sets vinden.
+# De kaarten uitdelen en ook de sets vinden.
 sets = []
 while len(sets) != eind:
     uitdelen = random.sample(kaarten, aantal_kaarten)
